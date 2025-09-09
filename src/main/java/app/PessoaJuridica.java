@@ -1,10 +1,8 @@
 package app;
+
 import java.time.LocalDate;
 
-public class PessoaJuridica {
-    private String nome;
-    private String endereco;
-    private LocalDate dataCriacao;
+public class PessoaJuridica extends Pessoa {
     private String nomeFantasia;
     private String cnpj;
 
@@ -14,30 +12,6 @@ public class PessoaJuridica {
         this.setDataCriacao(LocalDate.now());
         this.setNomeFantasia(nomeFantasia);
         this.setCnpj(cnpj);
-    }
-
-    public String getNome(){
-        return nome;
-    }
-
-    public void setNome(String nome){
-        this.nome = nome;
-    }
-
-    public String getEndereco(){
-        return endereco;
-    }
-
-    public void setEndereco(String endereco){
-        this.endereco = endereco;
-    }
-
-    public LocalDate getDataCriacao(){
-        return dataCriacao;
-    }
-
-    public void setDataCriacao(LocalDate dataCriacao){
-        this.dataCriacao = LocalDate.now();
     }
 
     public String getNomeFantasia(){
@@ -56,6 +30,7 @@ public class PessoaJuridica {
         this.cnpj = cnpj;
     }
 
+    @Override
     public String exbibirInformações(){
         return getNomeFantasia() + " | " + getCnpj();
     }
